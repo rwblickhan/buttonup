@@ -8,4 +8,10 @@
 
 import Foundation
 
-final class SubscribersModel {}
+final class SubscribersModel {
+    private let apiCache: APICache
+
+    init(apiCache: APICache) {
+        self.apiCache = apiCache
+    }
+}

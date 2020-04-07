@@ -12,7 +12,7 @@ final class DraftsViewController: UIViewController {
     private let model: DraftsModel
 
     init() {
-        model = DraftsModel()
+        model = DraftsModel(apiCache: APICacheImpl.global)
         super.init(nibName: nil, bundle: nil)
     }
 

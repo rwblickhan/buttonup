@@ -12,7 +12,7 @@ final class SubscribersViewController: UIViewController {
     private let model: SubscribersModel
 
     init() {
-        model = SubscribersModel()
+        model = SubscribersModel(apiCache: APICacheImpl.global)
         super.init(nibName: nil, bundle: nil)
     }
 

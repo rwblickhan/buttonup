@@ -8,4 +8,10 @@
 
 import Foundation
 
-final class ComposeModel {}
+final class ComposeModel {
+    private let apiCache: APICache
+
+    init(apiCache: APICache) {
+        self.apiCache = apiCache
+    }
+}

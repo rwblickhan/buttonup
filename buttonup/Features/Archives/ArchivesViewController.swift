@@ -12,7 +12,7 @@ final class ArchivesViewController: UIViewController {
     private let model: ArchivesModel
 
     init() {
-        model = ArchivesModel()
+        model = ArchivesModel(apiCache: APICacheImpl.global)
         super.init(nibName: nil, bundle: nil)
     }
 
