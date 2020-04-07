@@ -14,7 +14,7 @@ import Foundation
     case unactivated
     case unpaid
     case removed
-    
+
     init(apiValue: String) {
         switch apiValue.lowercased() {
         case "regular": self = .regular
@@ -24,7 +24,7 @@ import Foundation
         default: self = .unknown
         }
     }
-    
+
     var apiValue: String? {
         switch self {
         case .unknown: return nil

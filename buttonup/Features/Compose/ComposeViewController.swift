@@ -9,5 +9,14 @@
 import UIKit
 
 final class ComposeViewController: UIViewController {
+    private let model: ComposeModel
 
+    init() {
+        model = ComposeModel()
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

@@ -9,5 +9,14 @@
 import UIKit
 
 final class ArchivesViewController: UIViewController {
-    
+    private let model: ArchivesModel
+
+    init() {
+        model = ArchivesModel()
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) is not implemented")
+    }
 }

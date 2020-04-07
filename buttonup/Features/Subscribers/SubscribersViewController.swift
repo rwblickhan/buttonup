@@ -9,5 +9,14 @@
 import UIKit
 
 final class SubscribersViewController: UIViewController {
-    
+    private let model: SubscribersModel
+
+    init() {
+        model = SubscribersModel()
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

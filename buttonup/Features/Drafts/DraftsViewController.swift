@@ -9,5 +9,14 @@
 import UIKit
 
 final class DraftsViewController: UIViewController {
-    
+    private let model: DraftsModel
+
+    init() {
+        model = DraftsModel()
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

@@ -19,6 +19,6 @@ import Foundation
     @NSManaged var utmCampaign: String?
     @NSManaged var utmMedium: String?
     @NSManaged var utmSource: String?
-    
+
     @NSManaged var tags: NSOrderedSet // Tag
 }
