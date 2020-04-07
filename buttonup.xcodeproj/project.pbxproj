@@ -115,10 +115,10 @@
 		CDB5CFBD243AFD0100B6CBFA /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				CDF731D02420968B00596F24 /* ArchivesViewController.swift */,
-				CDF731D4242096C500596F24 /* ComposeViewController.swift */,
-				CDF731D2242096A400596F24 /* DraftsViewController.swift */,
-				CDF731CE2420966900596F24 /* SubscribersViewController.swift */,
+				CDB5CFC1243C490600B6CBFA /* Archives */,
+				CDB5CFC2243C490E00B6CBFA /* Compose */,
+				CDB5CFC3243C491B00B6CBFA /* Drafts */,
+				CDB5CFC4243C492200B6CBFA /* Subscribers */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -129,6 +129,38 @@
 				CDB5CFBF243C455900B6CBFA /* APICache.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		CDB5CFC1243C490600B6CBFA /* Archives */ = {
+			isa = PBXGroup;
+			children = (
+				CDF731D02420968B00596F24 /* ArchivesViewController.swift */,
+			);
+			path = Archives;
+			sourceTree = "<group>";
+		};
+		CDB5CFC2243C490E00B6CBFA /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				CDF731D4242096C500596F24 /* ComposeViewController.swift */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		CDB5CFC3243C491B00B6CBFA /* Drafts */ = {
+			isa = PBXGroup;
+			children = (
+				CDF731D2242096A400596F24 /* DraftsViewController.swift */,
+			);
+			path = Drafts;
+			sourceTree = "<group>";
+		};
+		CDB5CFC4243C492200B6CBFA /* Subscribers */ = {
+			isa = PBXGroup;
+			children = (
+				CDF731CE2420966900596F24 /* SubscribersViewController.swift */,
+			);
+			path = Subscribers;
 			sourceTree = "<group>";
 		};
 		CDF7318D242094AE00596F24 = {
