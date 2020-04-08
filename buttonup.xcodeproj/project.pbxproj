@@ -17,6 +17,7 @@
 		CDB5CFC8243C49B800B6CBFA /* ComposeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFC7243C49B800B6CBFA /* ComposeModel.swift */; };
 		CDB5CFCA243C49C800B6CBFA /* DraftsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFC9243C49C800B6CBFA /* DraftsModel.swift */; };
 		CDB5CFCC243C49DA00B6CBFA /* SubscribersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFCB243C49DA00B6CBFA /* SubscribersModel.swift */; };
+		CDB5CFCE243D8FAC00B6CBFA /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFCD243D8FAC00B6CBFA /* APIClient.swift */; };
 		CDF7319A242094AE00596F24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF73199242094AE00596F24 /* AppDelegate.swift */; };
 		CDF7319C242094AE00596F24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7319B242094AE00596F24 /* SceneDelegate.swift */; };
 		CDF731A4242094AE00596F24 /* buttonup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CDF731A2242094AE00596F24 /* buttonup.xcdatamodeld */; };
@@ -58,6 +59,7 @@
 		CDB5CFC7243C49B800B6CBFA /* ComposeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeModel.swift; sourceTree = "<group>"; };
 		CDB5CFC9243C49C800B6CBFA /* DraftsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftsModel.swift; sourceTree = "<group>"; };
 		CDB5CFCB243C49DA00B6CBFA /* SubscribersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribersModel.swift; sourceTree = "<group>"; };
+		CDB5CFCD243D8FAC00B6CBFA /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		CDF73196242094AE00596F24 /* buttonup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buttonup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF73199242094AE00596F24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDF7319B242094AE00596F24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				CDB5CFBF243C455900B6CBFA /* APICache.swift */,
+				CDB5CFCD243D8FAC00B6CBFA /* APIClient.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDB5CFCA243C49C800B6CBFA /* DraftsModel.swift in Sources */,
+				CDB5CFCE243D8FAC00B6CBFA /* APIClient.swift in Sources */,
 				CDF7319A242094AE00596F24 /* AppDelegate.swift in Sources */,
 				CDA7285F24233E7200337824 /* RootTabBarController.swift in Sources */,
 				CDA3BA9E2425D7D200BDAD2B /* Tag.swift in Sources */,

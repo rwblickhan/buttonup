@@ -9,7 +9,14 @@
 import UIKit
 
 final class SubscribersViewController: UIViewController {
+    
+    // MARK: Services
+    
     private let model: SubscribersModel
+    
+    // MARK: Subviews
+    
+    private let tableView = UITableView(frame: .zero)
 
     init() {
         model = SubscribersModel(apiCache: APICacheImpl.global)
