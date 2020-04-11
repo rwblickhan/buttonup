@@ -16,13 +16,13 @@ final class RootTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         setViewControllers([
-            composeViewController,
-            subscribersViewController,
-            draftsViewController,
-            archivesViewController,
+            UINavigationController(rootViewController: composeViewController),
+            UINavigationController(rootViewController: draftsViewController),
+            UINavigationController(rootViewController: subscribersViewController),
+            UINavigationController(rootViewController: archivesViewController),
         ], animated: false)
-        tabBar.tintColor = UIColor(named: "selectedTextFill")
-        tabBar.barTintColor = UIColor(named: "background")
+        tabBar.tintColor = .selectedTextFill
+        tabBar.barTintColor = .background
     }
 
     // MARK: View factories

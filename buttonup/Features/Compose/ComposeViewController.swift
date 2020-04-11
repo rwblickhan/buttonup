@@ -12,7 +12,7 @@ final class ComposeViewController: UIViewController {
     private let model: ComposeModel
 
     init() {
-        model = ComposeModel(apiCache: APICacheImpl.global)
+        model = ComposeModel(apiClient: APIClientImpl.global)
         super.init(nibName: nil, bundle: nil)
     }
 

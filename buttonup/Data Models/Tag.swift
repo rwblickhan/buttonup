@@ -8,10 +8,10 @@
 
 import Foundation
 
-@objc class Tag: NSObject {
-    @NSManaged var color: String?
-    @NSManaged var creationDate: Date?
-    @NSManaged var id: String?
-    @NSManaged var name: String?
-    @NSManaged var tagDescription: String?
+struct Tag: Codable {
+    let color: String?
+    let creationDate: Date?
+    let id: String?
+    let name: String?
+    let tagDescription: String?
 }

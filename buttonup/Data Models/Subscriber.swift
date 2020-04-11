@@ -8,17 +8,17 @@
 
 import Foundation
 
-@objc class Subscriber: NSObject {
-    @NSManaged var creationDate: Date?
-    @NSManaged var email: String?
-    @NSManaged var id: String?
-    @NSManaged var notes: String?
-    @NSManaged var referrerURL: URL?
-    @NSManaged var source: String?
-    @NSManaged var subscriberType: SubscriberType
-    @NSManaged var utmCampaign: String?
-    @NSManaged var utmMedium: String?
-    @NSManaged var utmSource: String?
+struct Subscriber: Codable {
+    let creationDate: Date?
+    let email: String
+    let id: String?
+    let notes: String
+    let referrerURL: URL?
+    let source: String
+    let subscriberType: SubscriberType?
+    let utmCampaign: String?
+    let utmMedium: String?
+    let utmSource: String?
 
-    @NSManaged var tags: NSOrderedSet // Tag
+    let tags: [Tag]
 }

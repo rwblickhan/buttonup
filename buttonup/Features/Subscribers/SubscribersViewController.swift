@@ -9,8 +9,7 @@
 import UIKit
 
 final class SubscribersViewController: UIViewController {
-    
-    // MARK: Services
+    // MARK: Model
     
     private let model: SubscribersModel
     
@@ -19,11 +18,15 @@ final class SubscribersViewController: UIViewController {
     private let tableView = UITableView(frame: .zero)
 
     init() {
-        model = SubscribersModel(apiCache: APICacheImpl.global)
+        self.model = SubscribersModel()
         super.init(nibName: nil, bundle: nil)
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        model.request()
     }
 }

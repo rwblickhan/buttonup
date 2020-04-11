@@ -6,31 +6,14 @@
 //  Copyright © 2020 Russell Blickhan. All rights reserved.
 //
 
+import Combine
 import Foundation
 
 protocol APIClient {
-    func send(_ request: Request)
-    func enqueue(_ request: Request)
-}
-
-enum APIPath: String {
-    case drafts = "/v1/drafts"
-}
-
-enum HTTPMethod: String {
-    case get
-    case post
-    case patch
-    case put
-    case delete
-}
-
-protocol Request {
-    var path: APIPath { get }
-    var method: HTTPMethod { get }
-    var parameters: [(String, Any)]? { get }
-    var body: [String: Any]? { get }
-    func parseResponse()
+    func send<T: APIRequest>(
+        _ request: T,
+        onCompletion: @escaping (Subscribers.Completion<Error>) -> Void,
+        onValue: @escaping (T.Response) -> Void) -> AnyCancellable?
 }
 
 final class APIClientImpl: APIClient {
@@ -38,15 +21,46 @@ final class APIClientImpl: APIClient {
     
     private struct Constants {
         static let baseURL = URL(string: "https://api.buttondown.email")!
+        static let apiKey = ""
     }
 
     fileprivate init() { }
     
-    func send(_ request: Request) {
-        // TODO
-    }
-    
-    func enqueue(_ request: Request) {
-        // TODO
+    func send<T: APIRequest>(
+        _ request: T,
+        onCompletion: @escaping (Subscribers.Completion<Error>) -> Void,
+        onValue: @escaping (T.Response) -> Void) -> AnyCancellable? {
+        var urlComponents = URLComponents()
+        urlComponents.path = request.path.rawValue
+        if let parameters = request.parameters {
+            assert(request.method != .post, "POST requests should not have parameters")
+            urlComponents.queryItems = parameters.map { parameter in
+                let (name, value) = parameter
+                return URLQueryItem(name: name, value: value)
+            }
+        }
+        guard let url = urlComponents.url(relativeTo: Constants.baseURL) else {
+            assert(false, "URL should always be able to be constructed")
+            return nil
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = request.method.rawValue
+        urlRequest.httpBody = request.body
+        // Be a very naughty boy and overwrite Authorization header
+        urlRequest.setValue("Token \(Constants.apiKey)", forHTTPHeaderField: "Authorization")
+        
+        return URLSession.shared.dataTaskPublisher(for: urlRequest)
+            .tryMap { (data, response) -> Data in
+                guard
+                    let httpResponse = response as? HTTPURLResponse,
+                    httpResponse.statusCode == 200
+                    else { throw URLError(.badServerResponse) }
+                return data
+        }
+        .decode(type: T.Response.self, decoder: JSONDecoder())
+        .receive(on: DispatchQueue.main)
+        .eraseToAnyPublisher()
+        .sink(receiveCompletion: onCompletion, receiveValue: onValue)
     }
 }

@@ -9,9 +9,9 @@
 import Foundation
 
 final class ComposeModel {
-    private let apiCache: APICache
+    private let apiClient: APIClient
 
-    init(apiCache: APICache) {
-        self.apiCache = apiCache
+    init(apiClient: APIClient) {
+        self.apiClient = apiClient
     }
 }
