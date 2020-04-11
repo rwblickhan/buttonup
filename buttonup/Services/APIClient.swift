@@ -13,23 +13,25 @@ protocol APIClient {
     func send<T: APIRequest>(
         _ request: T,
         onCompletion: @escaping (Subscribers.Completion<Error>) -> Void,
-        onValue: @escaping (T.Response) -> Void) -> AnyCancellable?
+        onValue: @escaping (T.Response) -> Void
+    ) -> AnyCancellable?
 }
 
 final class APIClientImpl: APIClient {
     static let global = APIClientImpl()
-    
+
     private struct Constants {
         static let baseURL = URL(string: "https://api.buttondown.email")!
         static let apiKey = ""
     }
 
-    fileprivate init() { }
-    
+    fileprivate init() {}
+
     func send<T: APIRequest>(
         _ request: T,
         onCompletion: @escaping (Subscribers.Completion<Error>) -> Void,
-        onValue: @escaping (T.Response) -> Void) -> AnyCancellable? {
+        onValue: @escaping (T.Response) -> Void
+    ) -> AnyCancellable? {
         var urlComponents = URLComponents()
         urlComponents.path = request.path.rawValue
         if let parameters = request.parameters {
@@ -43,24 +45,24 @@ final class APIClientImpl: APIClient {
             assert(false, "URL should always be able to be constructed")
             return nil
         }
-        
+
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.method.rawValue
         urlRequest.httpBody = request.body
         // Be a very naughty boy and overwrite Authorization header
         urlRequest.setValue("Token \(Constants.apiKey)", forHTTPHeaderField: "Authorization")
-        
+
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
             .tryMap { (data, response) -> Data in
                 guard
                     let httpResponse = response as? HTTPURLResponse,
                     httpResponse.statusCode == 200
-                    else { throw URLError(.badServerResponse) }
+                else { throw URLError(.badServerResponse) }
                 return data
-        }
-        .decode(type: T.Response.self, decoder: JSONDecoder())
-        .receive(on: DispatchQueue.main)
-        .eraseToAnyPublisher()
-        .sink(receiveCompletion: onCompletion, receiveValue: onValue)
+            }
+            .decode(type: T.Response.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+            .sink(receiveCompletion: onCompletion, receiveValue: onValue)
     }
 }

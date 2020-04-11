@@ -17,8 +17,8 @@ struct SubscriberListResponse: Codable {
 
 struct SubscriberListRequest: APIRequest {
     typealias Response = SubscriberListResponse
-    
+
     var path: APIPath { .subscribers }
-    
+
     var method: HTTPMethod { .get }
 }

@@ -1,0 +1,4 @@
+disabled_rules:
+    - trailing_comma
+    - identifier_name
+    - line_length

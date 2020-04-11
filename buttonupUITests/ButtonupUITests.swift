@@ -1,6 +1,6 @@
 //
-//  buttonupUITests.swift
-//  buttonupUITests
+//  ButtonupUITests.swift
+//  ButtonupUITests
 //
 //  Created by Russell Blickhan on 3/16/20.
 //  Copyright © 2020 Russell Blickhan. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class buttonupUITests: XCTestCase {
+class ButtonupUITests: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
