@@ -10,6 +10,7 @@ import Combine
 import Foundation
 
 final class SubscribersModel {
+    
     // MARK: Services
 
     private let apiClient: APIClient
@@ -34,8 +35,9 @@ final class SubscribersModel {
         subscriberListRequest = cancellable
     }
 
-    private func onCompletion(_: Subscribers.Completion<Error>) {
+    private func onCompletion(_ error: Subscribers.Completion<Error>) {
         subscriberListRequest = nil
+        print(error)
     }
 
     private func onValue(_ response: SubscriberListResponse) {

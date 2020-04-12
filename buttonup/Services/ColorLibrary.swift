@@ -11,4 +11,5 @@ import UIKit
 extension UIColor {
     static let background = UIColor(named: "background")
     static let selectedTextFill = UIColor(named: "selectedTextFill")
+    static let unselectedTextFill = UIColor(named: "unselectedTextFill")
 }

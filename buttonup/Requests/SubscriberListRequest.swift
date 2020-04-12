@@ -15,6 +15,7 @@ struct SubscriberListResponse: Codable {
     let count: Int
 }
 
+/// See https://api.buttondown.email/v1/schema#operation/subscribers_list.
 struct SubscriberListRequest: APIRequest {
     typealias Response = SubscriberListResponse
 

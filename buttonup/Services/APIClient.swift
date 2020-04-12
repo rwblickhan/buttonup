@@ -62,7 +62,6 @@ final class APIClientImpl: APIClient {
             }
             .decode(type: T.Response.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
             .sink(receiveCompletion: onCompletion, receiveValue: onValue)
     }
 }

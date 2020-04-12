@@ -21,8 +21,6 @@ enum HTTPMethod: String {
     case delete
 }
 
-protocol Response: Codable {}
-
 protocol APIRequest {
     associatedtype Response: Codable
     var path: APIPath { get }

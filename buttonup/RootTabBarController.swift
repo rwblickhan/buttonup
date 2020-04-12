@@ -33,7 +33,7 @@ final class RootTabBarController: UITabBarController {
             title: "Archive",
             image: UIImage(systemName: "archivebox"),
             selectedImage: UIImage(systemName: "archivebox.fill")?
-                .withTintColor(UIColor(named: "unselectedTextFill") ?? UIColor())
+                .withTintColor(.unselectedTextFill ?? UIColor())
         )
         return archivesViewController
     }
@@ -44,7 +44,7 @@ final class RootTabBarController: UITabBarController {
             title: "Compose",
             image: UIImage(systemName: "pencil"),
             selectedImage: UIImage(systemName: "pencil.fill")?
-                .withTintColor(UIColor(named: "unselectedTextFill") ?? UIColor())
+                .withTintColor(.unselectedTextFill ?? UIColor())
         )
         return composeViewController
     }
@@ -55,7 +55,7 @@ final class RootTabBarController: UITabBarController {
             title: "Drafts",
             image: UIImage(systemName: "envelope.circle"),
             selectedImage: UIImage(systemName: "envelope.circle.fill")?
-                .withTintColor(UIColor(named: "unselectedTextFill") ?? UIColor())
+                .withTintColor(.unselectedTextFill ?? UIColor())
         )
         return draftsViewController
     }
@@ -66,7 +66,7 @@ final class RootTabBarController: UITabBarController {
             title: "Subscribers",
             image: UIImage(systemName: "person.3"),
             selectedImage: UIImage(systemName: "person.3.fill")?
-                .withTintColor(UIColor(named: "unselectedTextFill") ?? UIColor())
+                .withTintColor(.unselectedTextFill ?? UIColor())
         )
         return subscribersViewController
     }
