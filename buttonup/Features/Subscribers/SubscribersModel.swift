@@ -7,9 +7,15 @@
 //
 
 import Combine
-import Foundation
+import UIKit
+
+protocol SubscribersModelDelegate: AnyObject {
+    func subscribersModelDidUpdate(_ subscribers: [Subscriber]) // TODO replace
+    func subscribersModelDidFinishRefreshing() // TODO replace
+}
 
 final class SubscribersModel {
+    private weak var delegate: SubscribersModelDelegate?
     
     // MARK: Services
 
@@ -18,9 +24,14 @@ final class SubscribersModel {
     // MARK: Requests
 
     private var subscriberListRequest: AnyCancellable?
+    
+    // MARK: Data models
+    
+    private var subscribers = [Subscriber]()
 
-    init(apiClient: APIClient = APIClientImpl.global) {
+    init(apiClient: APIClient = APIClientImpl.global, delegate: SubscribersModelDelegate) {
         self.apiClient = apiClient
+        self.delegate = delegate
     }
 
     deinit {
@@ -35,15 +46,17 @@ final class SubscribersModel {
         subscriberListRequest = cancellable
     }
 
-    private func onCompletion(_ error: Subscribers.Completion<Error>) {
+    private func onCompletion(_ completion: Subscribers.Completion<Error>) {
         subscriberListRequest = nil
-        print(error)
+        delegate?.subscribersModelDidFinishRefreshing()
+        switch completion {
+        case .finished: break
+        case .failure(let error): print(error)
+        }
     }
 
     private func onValue(_ response: SubscriberListResponse) {
         assert(response.results.count == response.count)
-        for email in response.results.map({ $0.email }) {
-            print(email)
-        }
+        subscribers = response.results
     }
 }

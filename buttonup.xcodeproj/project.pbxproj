@@ -20,6 +20,7 @@
 		CDB5CFD2244023F400B6CBFA /* ColorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFD1244023F400B6CBFA /* ColorLibrary.swift */; };
 		CDB5CFD9244027BD00B6CBFA /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFD8244027BD00B6CBFA /* APIRequest.swift */; };
 		CDB5CFDB2440282C00B6CBFA /* SubscriberListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFDA2440282C00B6CBFA /* SubscriberListRequest.swift */; };
+		CDB5CFE3244577D900B6CBFA /* SubscribersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFE2244577D900B6CBFA /* SubscribersCell.swift */; };
 		CDF7319A242094AE00596F24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF73199242094AE00596F24 /* AppDelegate.swift */; };
 		CDF7319C242094AE00596F24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7319B242094AE00596F24 /* SceneDelegate.swift */; };
 		CDF731A6242094B000596F24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF731A5242094B000596F24 /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		CDB5CFD1244023F400B6CBFA /* ColorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLibrary.swift; sourceTree = "<group>"; };
 		CDB5CFD8244027BD00B6CBFA /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		CDB5CFDA2440282C00B6CBFA /* SubscriberListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriberListRequest.swift; sourceTree = "<group>"; };
+		CDB5CFE2244577D900B6CBFA /* SubscribersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribersCell.swift; sourceTree = "<group>"; };
 		CDF73196242094AE00596F24 /* buttonup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buttonup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF73199242094AE00596F24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDF7319B242094AE00596F24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				CDF731CE2420966900596F24 /* SubscribersViewController.swift */,
 				CDB5CFCB243C49DA00B6CBFA /* SubscribersModel.swift */,
+				CDB5CFE2244577D900B6CBFA /* SubscribersCell.swift */,
 			);
 			path = Subscribers;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				CDF731CF2420966900596F24 /* SubscribersViewController.swift in Sources */,
 				CDF731D5242096C500596F24 /* ComposeViewController.swift in Sources */,
 				CDF731D3242096A400596F24 /* DraftsViewController.swift in Sources */,
+				CDB5CFE3244577D900B6CBFA /* SubscribersCell.swift in Sources */,
 				CDF731D12420968B00596F24 /* ArchivesViewController.swift in Sources */,
 				CDB5CFC6243C499900B6CBFA /* ArchivesModel.swift in Sources */,
 				CDB5CFCC243C49DA00B6CBFA /* SubscribersModel.swift in Sources */,
