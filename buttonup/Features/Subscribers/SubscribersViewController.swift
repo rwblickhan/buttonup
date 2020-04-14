@@ -48,6 +48,7 @@ SubscribersModelDelegate {
         tableView.frame = view.frame
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.register(SubscribersCell.self, forCellReuseIdentifier: SubscribersCell.CellIdentifier)
         super.viewDidLoad()
     }
 
@@ -60,6 +61,7 @@ SubscribersModelDelegate {
     
     func subscribersModelDidUpdate(_ subscribers: [Subscriber]) {
         var snapshot = NSDiffableDataSourceSnapshot<Int, Subscriber>()
+        snapshot.appendSections([0])
         snapshot.appendItems(subscribers)
         datasource.apply(snapshot)
     }
@@ -71,6 +73,6 @@ SubscribersModelDelegate {
     // MARK: Targets
     
     @objc private func refresh() {
-        
+        model.request()
     }
 }

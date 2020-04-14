@@ -27,7 +27,11 @@ final class SubscribersModel {
     
     // MARK: Data models
     
-    private var subscribers = [Subscriber]()
+    private var subscribers = [Subscriber]() {
+        didSet {
+            delegate?.subscribersModelDidUpdate(subscribers)
+        }
+    }
 
     init(apiClient: APIClient = APIClientImpl.global, delegate: SubscribersModelDelegate) {
         self.apiClient = apiClient

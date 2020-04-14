@@ -13,6 +13,16 @@ final class SubscribersCell: UITableViewCell {
     
     private let label = UILabel()
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        contentView.addSubview(label)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func configure(with subscriber: Subscriber) {
         let margins = contentView.layoutMarginsGuide
         label.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
