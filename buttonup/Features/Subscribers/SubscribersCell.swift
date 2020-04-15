@@ -16,7 +16,18 @@ final class SubscribersCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
+        
+        // MARK: View Hierarchy
+        
         contentView.addSubview(label)
+        
+        // MARK: Layout
+        
+        let margins = contentView.layoutMarginsGuide
+        label.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: margins.centerYAnchor).isActive = true
     }
     
     required init?(coder: NSCoder) {
@@ -24,10 +35,6 @@ final class SubscribersCell: UITableViewCell {
     }
     
     func configure(with subscriber: Subscriber) {
-        let margins = contentView.layoutMarginsGuide
-        label.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
-        label.centerYAnchor.constraint(equalTo: margins.centerYAnchor).isActive = true
-
         label.text = subscriber.email
     }
 }
