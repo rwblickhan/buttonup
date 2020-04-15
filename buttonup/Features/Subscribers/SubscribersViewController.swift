@@ -9,7 +9,8 @@
 import UIKit
 
 final class SubscribersViewController: UIViewController,
-SubscribersModelDelegate {
+SubscribersModelDelegate,
+UITableViewDelegate {
     
     // MARK: Model
 
@@ -44,12 +45,17 @@ SubscribersModelDelegate {
     // MARK: UIViewController
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         view.addSubview(tableView)
         tableView.frame = view.frame
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.register(SubscribersCell.self, forCellReuseIdentifier: SubscribersCell.CellIdentifier)
-        super.viewDidLoad()
+        tableView.delegate = self
+        
+        navigationController?.navigationBar.barStyle = .default
+        navigationController?.navigationBar.barTintColor = .background
     }
 
     override func viewDidAppear(_ animated: Bool) {
