@@ -21,7 +21,7 @@ UITableViewDelegate {
     private let tableView = UITableView(frame: .zero)
     
     // MARK: Table view data source
-    let datasource: UITableViewDiffableDataSource<Int, Subscriber>
+    private let datasource: UITableViewDiffableDataSource<Int, Subscriber>
 
     init() {
         datasource = UITableViewDiffableDataSource(tableView: tableView, cellProvider: { tableView, indexPath, subscriber in

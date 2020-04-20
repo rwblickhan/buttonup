@@ -21,6 +21,8 @@
 		CDB5CFD9244027BD00B6CBFA /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFD8244027BD00B6CBFA /* APIRequest.swift */; };
 		CDB5CFDB2440282C00B6CBFA /* SubscriberListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFDA2440282C00B6CBFA /* SubscriberListRequest.swift */; };
 		CDB5CFE3244577D900B6CBFA /* SubscribersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFE2244577D900B6CBFA /* SubscribersCell.swift */; };
+		CDB693CB244ABF910019DCBA /* Draft.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB693CA244ABF910019DCBA /* Draft.swift */; };
+		CDB693CD244AC07C0019DCBA /* DraftListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB693CC244AC07C0019DCBA /* DraftListRequest.swift */; };
 		CDF7319A242094AE00596F24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF73199242094AE00596F24 /* AppDelegate.swift */; };
 		CDF7319C242094AE00596F24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7319B242094AE00596F24 /* SceneDelegate.swift */; };
 		CDF731A6242094B000596F24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF731A5242094B000596F24 /* Assets.xcassets */; };
@@ -65,6 +67,8 @@
 		CDB5CFD8244027BD00B6CBFA /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		CDB5CFDA2440282C00B6CBFA /* SubscriberListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriberListRequest.swift; sourceTree = "<group>"; };
 		CDB5CFE2244577D900B6CBFA /* SubscribersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribersCell.swift; sourceTree = "<group>"; };
+		CDB693CA244ABF910019DCBA /* Draft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draft.swift; sourceTree = "<group>"; };
+		CDB693CC244AC07C0019DCBA /* DraftListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftListRequest.swift; sourceTree = "<group>"; };
 		CDF73196242094AE00596F24 /* buttonup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buttonup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF73199242094AE00596F24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDF7319B242094AE00596F24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				CDA3BA9F2425D86F00BDAD2B /* Data Model Enums */,
+				CDB693CA244ABF910019DCBA /* Draft.swift */,
 				CDA3BA9B2425D74500BDAD2B /* Subscriber.swift */,
 				CDA3BA9D2425D7D200BDAD2B /* Tag.swift */,
 			);
@@ -188,6 +193,7 @@
 			children = (
 				CDB5CFD8244027BD00B6CBFA /* APIRequest.swift */,
 				CDB5CFDA2440282C00B6CBFA /* SubscriberListRequest.swift */,
+				CDB693CC244AC07C0019DCBA /* DraftListRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 				CDA3BA9E2425D7D200BDAD2B /* Tag.swift in Sources */,
 				CDB5CFD2244023F400B6CBFA /* ColorLibrary.swift in Sources */,
 				CDB5CFDB2440282C00B6CBFA /* SubscriberListRequest.swift in Sources */,
+				CDB693CD244AC07C0019DCBA /* DraftListRequest.swift in Sources */,
 				CDF731CF2420966900596F24 /* SubscribersViewController.swift in Sources */,
 				CDF731D5242096C500596F24 /* ComposeViewController.swift in Sources */,
 				CDF731D3242096A400596F24 /* DraftsViewController.swift in Sources */,
@@ -394,6 +401,7 @@
 				CDF731D12420968B00596F24 /* ArchivesViewController.swift in Sources */,
 				CDB5CFC6243C499900B6CBFA /* ArchivesModel.swift in Sources */,
 				CDB5CFCC243C49DA00B6CBFA /* SubscribersModel.swift in Sources */,
+				CDB693CB244ABF910019DCBA /* Draft.swift in Sources */,
 				CDB5CFC8243C49B800B6CBFA /* ComposeModel.swift in Sources */,
 				CDA3BA9C2425D74500BDAD2B /* Subscriber.swift in Sources */,
 				CDA3BAA12425D87B00BDAD2B /* SubscriberType.swift in Sources */,

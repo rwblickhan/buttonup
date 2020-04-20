@@ -25,5 +25,7 @@ final class DraftsViewController: UIViewController {
         
         navigationController?.navigationBar.barStyle = .default
         navigationController?.navigationBar.barTintColor = .background
+        
+        model.request()
     }
 }
