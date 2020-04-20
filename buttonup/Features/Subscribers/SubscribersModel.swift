@@ -10,8 +10,7 @@ import Combine
 import UIKit
 
 protocol SubscribersModelDelegate: AnyObject {
-    func subscribersModelDidUpdate(_ subscribers: [Subscriber]) // TODO replace
-    func subscribersModelDidFinishRefreshing() // TODO replace
+    func configure(with viewModel: SubscribersViewModel)
 }
 
 final class SubscribersModel {
@@ -25,17 +24,18 @@ final class SubscribersModel {
 
     private var subscriberListRequest: AnyCancellable?
     
-    // MARK: Data models
+    // MARK: View model
     
-    private var subscribers = [Subscriber]() {
+    private var viewModel: SubscribersViewModel {
         didSet {
-            delegate?.subscribersModelDidUpdate(subscribers)
+            delegate?.configure(with: viewModel)
         }
     }
 
     init(apiClient: APIClient = APIClientImpl.global, delegate: SubscribersModelDelegate) {
         self.apiClient = apiClient
         self.delegate = delegate
+        self.viewModel = SubscribersViewModel()
     }
 
     deinit {
@@ -52,15 +52,15 @@ final class SubscribersModel {
 
     private func onCompletion(_ completion: Subscribers.Completion<Error>) {
         subscriberListRequest = nil
-        delegate?.subscribersModelDidFinishRefreshing()
         switch completion {
         case .finished: break
         case .failure(let error): print(error)
         }
+        viewModel.refreshing = false
     }
 
     private func onValue(_ response: SubscriberListResponse) {
         assert(response.results.count == response.count)
-        subscribers = response.results
+        viewModel.subscribers = response.results
     }
 }

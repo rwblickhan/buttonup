@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct SubscribersViewModel {
+    var subscribers = [Subscriber]()
+    var refreshing: Bool = false
+}
+
 final class SubscribersViewController: UIViewController,
 SubscribersModelDelegate,
 UITableViewDelegate {
@@ -65,15 +70,15 @@ UITableViewDelegate {
     
     // MARK: SubscribersModelDelegate
     
-    func subscribersModelDidUpdate(_ subscribers: [Subscriber]) {
+    func configure(with viewModel: SubscribersViewModel) {
+        if !viewModel.refreshing {
+            tableView.refreshControl?.endRefreshing()
+        }
+        
         var snapshot = NSDiffableDataSourceSnapshot<Int, Subscriber>()
         snapshot.appendSections([0])
-        snapshot.appendItems(subscribers)
+        snapshot.appendItems(viewModel.subscribers)
         datasource.apply(snapshot)
-    }
-    
-    func subscribersModelDidFinishRefreshing() {
-        tableView.refreshControl?.endRefreshing()
     }
     
     // MARK: Targets
