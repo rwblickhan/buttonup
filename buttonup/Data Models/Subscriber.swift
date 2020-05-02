@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct Subscriber: Codable {
+struct Subscriber: Codable, Hashable {
     let creationDate: Date?
     let email: String
-    let id: String?
+    let id: String
     let notes: String
     let referrerURL: URL?
     let source: String

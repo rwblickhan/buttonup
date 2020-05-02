@@ -17,12 +17,12 @@ protocol APIClient {
     ) -> AnyCancellable?
 }
 
-final class APIClientImpl: APIClient {
+struct APIClientImpl: APIClient {
     static let global = APIClientImpl()
 
     private struct Constants {
         static let baseURL = URL(string: "https://api.buttondown.email")!
-        static let apiKey = ""
+        static let apiKey = "e2865801-26f4-4b1f-b876-0c59d464cee7"
     }
 
     fileprivate init() {}
