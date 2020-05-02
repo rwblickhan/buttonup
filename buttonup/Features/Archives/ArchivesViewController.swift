@@ -19,4 +19,11 @@ final class ArchivesViewController: UIViewController {
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) is not implemented")
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationController?.navigationBar.barStyle = .default
+        navigationController?.navigationBar.barTintColor = .background
+    }
 }
