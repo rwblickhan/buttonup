@@ -17,7 +17,7 @@ protocol APIClient {
     ) -> AnyCancellable?
 }
 
-final class APIClientImpl: APIClient {
+struct APIClientImpl: APIClient {
     static let global = APIClientImpl()
 
     private struct Constants {
