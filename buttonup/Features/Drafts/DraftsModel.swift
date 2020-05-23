@@ -9,7 +9,13 @@
 import Combine
 import Foundation
 
+protocol DraftsModelDelegate: AnyObject {
+    func configure(with viewModel: DraftsViewModel)
+}
+
 final class DraftsModel {
+    private weak var delegate: DraftsModelDelegate?
+
     // MARK: Services
 
     private let apiClient: APIClient
@@ -21,9 +27,19 @@ final class DraftsModel {
     // MARK: Data models
     
     private var drafts = [Draft]()
+    
+    // MARK: View model
+    
+    private var viewModel: DraftsViewModel {
+        didSet {
+            delegate?.configure(with: viewModel)
+        }
+    }
 
-    init(apiClient: APIClient) {
+    init(apiClient: APIClient, delegate: DraftsModelDelegate) {
         self.apiClient = apiClient
+        self.delegate = delegate
+        self.viewModel = DraftsViewModel()
     }
     
     deinit {
@@ -37,17 +53,18 @@ final class DraftsModel {
         }
         draftListRequest = cancellable
     }
-    
+
     private func onCompletion(_ completion: Subscribers.Completion<Error>) {
         draftListRequest = nil
-        // TODO
         switch completion {
         case .finished: break
         case .failure(let error): print(error)
         }
+        viewModel.refreshing = false
     }
 
     private func onValue(_ response: DraftListResponse) {
-        drafts = response.results
+        assert(response.results.count == response.count)
+        viewModel.drafts = response.results
     }
 }

@@ -10,6 +10,9 @@ import Foundation
 
 struct DraftListResponse: Codable {
     let results: [Draft]
+    let next: String?
+    let previous: String?
+    let count: Int
 }
 
 /// See https://api.buttondown.email/v1/schema#operation/drafts_list.

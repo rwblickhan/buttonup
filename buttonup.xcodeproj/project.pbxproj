@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD151E9B2479900700410ADD /* DraftsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD151E9A2479900700410ADD /* DraftsCell.swift */; };
 		CDA3BA992425D24100BDAD2B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA3BA982425D24100BDAD2B /* Colors.xcassets */; };
 		CDA3BA9C2425D74500BDAD2B /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA3BA9B2425D74500BDAD2B /* Subscriber.swift */; };
 		CDA3BA9E2425D7D200BDAD2B /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA3BA9D2425D7D200BDAD2B /* Tag.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD151E9A2479900700410ADD /* DraftsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftsCell.swift; sourceTree = "<group>"; };
 		CDA3BA982425D24100BDAD2B /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		CDA3BA9B2425D74500BDAD2B /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
 		CDA3BA9D2425D7D200BDAD2B /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				CDF731D2242096A400596F24 /* DraftsViewController.swift */,
 				CDB5CFC9243C49C800B6CBFA /* DraftsModel.swift */,
+				CD151E9A2479900700410ADD /* DraftsCell.swift */,
 			);
 			path = Drafts;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				CDB5CFD2244023F400B6CBFA /* ColorLibrary.swift in Sources */,
 				CDB5CFDB2440282C00B6CBFA /* SubscriberListRequest.swift in Sources */,
 				CDB693CD244AC07C0019DCBA /* DraftListRequest.swift in Sources */,
+				CD151E9B2479900700410ADD /* DraftsCell.swift in Sources */,
 				CDF731CF2420966900596F24 /* SubscribersViewController.swift in Sources */,
 				CDF731D5242096C500596F24 /* ComposeViewController.swift in Sources */,
 				CDF731D3242096A400596F24 /* DraftsViewController.swift in Sources */,
