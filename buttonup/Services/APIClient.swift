@@ -51,6 +51,38 @@ struct APIClientImpl: APIClient {
         urlRequest.httpBody = request.body
         // Be a very naughty boy and overwrite Authorization header
         urlRequest.setValue("Token \(Constants.apiKey)", forHTTPHeaderField: "Authorization")
+        
+        let fractionalSecondsDateFormatter = ISO8601DateFormatter()
+        fractionalSecondsDateFormatter.formatOptions = [
+            .withFullDate,
+            .withFullTime,
+            .withDashSeparatorInDate,
+            .withColonSeparatorInTime,
+            .withFractionalSeconds
+        ]
+        
+        let nonFractionalSecondsDateFormatter = ISO8601DateFormatter()
+        nonFractionalSecondsDateFormatter.formatOptions = [
+            .withFullDate,
+            .withFullTime,
+            .withDashSeparatorInDate,
+            .withColonSeparatorInTime
+        ]
+        
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .custom({ decoder in
+            let container = try decoder.singleValueContainer()
+            let dateString = try container.decode(String.self)
+            if let date = fractionalSecondsDateFormatter.date(from: dateString) {
+                return date
+            } else if let date = nonFractionalSecondsDateFormatter.date(from: dateString) {
+                return date
+            } else {
+                throw DecodingError.dataCorruptedError(
+                    in: container,
+                    debugDescription: "Date string \(dateString) has unexpected format")
+            }
+        })
 
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
             .tryMap { (data, response) -> Data in
@@ -60,7 +92,7 @@ struct APIClientImpl: APIClient {
                 else { throw URLError(.badServerResponse) }
                 return data
             }
-            .decode(type: T.Response.self, decoder: JSONDecoder())
+            .decode(type: T.Response.self, decoder: decoder)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: onCompletion, receiveValue: onValue)
     }
