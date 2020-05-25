@@ -1,15 +1,15 @@
 //
-//  SubscribersCell.swift
+//  ArchivesCell.swift
 //  buttonup
 //
-//  Created by Russell Blickhan on 4/13/20.
+//  Created by Russell Blickhan on 5/25/20.
 //  Copyright © 2020 Russell Blickhan. All rights reserved.
 //
 
 import UIKit
 
-final class SubscribersCell: UITableViewCell {
-    static let CellIdentifier = "SubscribersCell"
+final class ArchivesCell: UITableViewCell {
+    static let CellIdentifier = "ArchivesCell"
     
     private let label = UILabel()
     
@@ -35,7 +35,7 @@ final class SubscribersCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with subscriber: Subscriber) {
-        label.text = subscriber.email
+    func configure(with email: Email) {
+        label.text = email.subject
     }
 }

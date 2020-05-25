@@ -30,7 +30,7 @@ final class RootTabBarController: UITabBarController {
     private func makeArchivesViewController() -> ArchivesViewController {
         let archivesViewController = ArchivesViewController()
         archivesViewController.tabBarItem = UITabBarItem(
-            title: "Archive",
+            title: NSLocalizedString("Archive", comment: "Title of the archive tab"),
             image: UIImage(systemName: "archivebox"),
             selectedImage: UIImage(systemName: "archivebox.fill")?
                 .withTintColor(.unselectedTextFill ?? UIColor())
@@ -41,7 +41,7 @@ final class RootTabBarController: UITabBarController {
     private func makeComposeViewController() -> ComposeViewController {
         let composeViewController = ComposeViewController()
         composeViewController.tabBarItem = UITabBarItem(
-            title: "Compose",
+            title: NSLocalizedString("Compose", comment: "Title of the compose tab"),
             image: UIImage(systemName: "pencil"),
             selectedImage: UIImage(systemName: "pencil.fill")?
                 .withTintColor(.unselectedTextFill ?? UIColor())
@@ -52,7 +52,7 @@ final class RootTabBarController: UITabBarController {
     private func makeDraftsViewController() -> DraftsViewController {
         let draftsViewController = DraftsViewController()
         draftsViewController.tabBarItem = UITabBarItem(
-            title: "Drafts",
+            title: NSLocalizedString("Drafts", comment: "Title of the drafts tab"),
             image: UIImage(systemName: "envelope.circle"),
             selectedImage: UIImage(systemName: "envelope.circle.fill")?
                 .withTintColor(.unselectedTextFill ?? UIColor())
@@ -63,7 +63,7 @@ final class RootTabBarController: UITabBarController {
     private func makeSubscribersViewController() -> SubscribersViewController {
         let subscribersViewController = SubscribersViewController()
         subscribersViewController.tabBarItem = UITabBarItem(
-            title: "Subscribers",
+            title: NSLocalizedString("Subscribers", comment: "Tite of the subscribers tab"),
             image: UIImage(systemName: "person.3"),
             selectedImage: UIImage(systemName: "person.3.fill")?
                 .withTintColor(.unselectedTextFill ?? UIColor())

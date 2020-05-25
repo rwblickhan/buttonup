@@ -8,6 +8,14 @@
 
 import Foundation
 
+enum SubscriberType: String, Codable {
+    case regular
+    case unactivated
+    case unpaid
+    case spammy
+    case removed
+}
+
 struct Subscriber: Codable, Hashable {
     let creationDate: Date
     let email: String

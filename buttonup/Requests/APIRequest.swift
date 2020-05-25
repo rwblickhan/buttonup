@@ -10,6 +10,7 @@ import Foundation
 
 enum APIPath: String {
     case drafts = "/v1/drafts"
+    case emails = "/v1/emails"
     case subscribers = "/v1/subscribers"
 }
 
