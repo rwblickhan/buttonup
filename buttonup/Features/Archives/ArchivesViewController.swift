@@ -8,22 +8,77 @@
 
 import UIKit
 
-final class ArchivesViewController: UIViewController {
-    private let model: ArchivesModel
+struct ArchivesViewModel {
+    var emails = [Email]()
+    var refreshing: Bool = false
+}
+
+final class ArchivesViewController: UIViewController,
+    ArchivesModelDelegate,
+    UITableViewDelegate {
+    private var model: ArchivesModel!
+    
+    // MARK: Subviews
+
+    private let tableView = UITableView(frame: .zero)
+    
+    // MARK: Table view data source
+    private let datasource: UITableViewDiffableDataSource<Int, Email>
 
     init() {
-        model = ArchivesModel(apiClient: APIClientImpl.global)
+        datasource = UITableViewDiffableDataSource(tableView: tableView, cellProvider: { tableView, indexPath, email in
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: ArchivesCell.CellIdentifier,
+                for: indexPath) as? ArchivesCell else {
+                    assert(false)
+                    return UITableViewCell()
+            }
+            cell.configure(with: email)
+            return cell
+        })
         super.init(nibName: nil, bundle: nil)
+        model = ArchivesModel(apiClient: APIClientImpl.global, delegate: self)
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) is not implemented")
     }
     
+    // MARK: UIViewController
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+        view.addSubview(tableView)
+        tableView.frame = view.frame
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.register(DraftsCell.self, forCellReuseIdentifier: ArchivesCell.CellIdentifier)
+        tableView.delegate = self
         
         navigationController?.navigationBar.barStyle = .default
         navigationController?.navigationBar.barTintColor = .background
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        model.request()
+        super.viewDidAppear(animated)
+    }
+    
+    // MARK: ArchivesModelDelegate
+    
+    func configure(with viewModel: ArchivesViewModel) {
+        if !viewModel.refreshing {
+            tableView.refreshControl?.endRefreshing()
+        }
+        
+        var snapshot = NSDiffableDataSourceSnapshot<Int, Email>()
+        snapshot.appendSections([0])
+        snapshot.appendItems(viewModel.emails)
+        datasource.apply(snapshot)
+    }
+    
+    // MARK: Targets
+    
+    @objc private func refresh() {
+        model.request()
     }
 }
