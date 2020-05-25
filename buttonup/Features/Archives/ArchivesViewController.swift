@@ -51,7 +51,7 @@ final class ArchivesViewController: UIViewController,
         tableView.frame = view.frame
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        tableView.register(DraftsCell.self, forCellReuseIdentifier: ArchivesCell.CellIdentifier)
+        tableView.register(ArchivesCell.self, forCellReuseIdentifier: ArchivesCell.CellIdentifier)
         tableView.delegate = self
         
         navigationController?.navigationBar.barStyle = .default

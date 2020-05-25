@@ -27,6 +27,7 @@ final class DraftsCell: UITableViewCell {
         
         let margins = contentView.layoutMarginsGuide
         label.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
+        label.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
         label.centerYAnchor.constraint(equalTo: margins.centerYAnchor).isActive = true
     }
     
