@@ -23,6 +23,8 @@ final class ComposeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .systemBackground
+        
         navigationController?.navigationBar.barStyle = .default
         navigationController?.navigationBar.barTintColor = .systemBackground
     }
