@@ -39,7 +39,7 @@ struct Subscriber: Codable, Hashable {
         case source
         case subscriberType = "subscriber_type"
         case utmCampaign = "utm_campaign"
-        case utmMedium = "utmMedium"
+        case utmMedium = "utm_medium"
         case utmSource = "utm_source"
         case tags
     }

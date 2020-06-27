@@ -13,6 +13,7 @@ final class RootTabBarController: UITabBarController {
     private lazy var composeViewController = makeComposeViewController()
     private lazy var draftsViewController = makeDraftsViewController()
     private lazy var subscribersViewController = makeSubscribersViewController()
+    private lazy var settingsViewController = makeSettingsViewController()
 
     override func viewDidLoad() {
         setViewControllers([
@@ -20,6 +21,7 @@ final class RootTabBarController: UITabBarController {
             UINavigationController(rootViewController: draftsViewController),
             UINavigationController(rootViewController: subscribersViewController),
             UINavigationController(rootViewController: archivesViewController),
+            UINavigationController(rootViewController: settingsViewController)
         ], animated: false)
         tabBar.tintColor = .selectedTextFill
         tabBar.barTintColor = .background
@@ -69,5 +71,15 @@ final class RootTabBarController: UITabBarController {
                 .withTintColor(.unselectedTextFill ?? UIColor())
         )
         return subscribersViewController
+    }
+    
+    private func makeSettingsViewController() -> SettingsViewController {
+        let settingsViewController = SettingsViewController()
+        settingsViewController.tabBarItem = UITabBarItem(
+            title: NSLocalizedString("Settings", comment: "Title of the settings tab"),
+            image: UIImage(systemName: "gear"),
+            selectedImage: UIImage(systemName: "gear")?
+                .withTintColor(.unselectedTextFill ?? UIColor()))
+        return settingsViewController
     }
 }

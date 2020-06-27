@@ -26,6 +26,7 @@
 		CDB5CFE3244577D900B6CBFA /* SubscribersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFE2244577D900B6CBFA /* SubscribersCell.swift */; };
 		CDB693CB244ABF910019DCBA /* Draft.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB693CA244ABF910019DCBA /* Draft.swift */; };
 		CDB693CD244AC07C0019DCBA /* DraftListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB693CC244AC07C0019DCBA /* DraftListRequest.swift */; };
+		CDD4DC2A24A8067E00A1E4A3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD4DC2924A8067E00A1E4A3 /* SettingsViewController.swift */; };
 		CDF7319A242094AE00596F24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF73199242094AE00596F24 /* AppDelegate.swift */; };
 		CDF7319C242094AE00596F24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7319B242094AE00596F24 /* SceneDelegate.swift */; };
 		CDF731A6242094B000596F24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF731A5242094B000596F24 /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 		CDB5CFE2244577D900B6CBFA /* SubscribersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribersCell.swift; sourceTree = "<group>"; };
 		CDB693CA244ABF910019DCBA /* Draft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draft.swift; sourceTree = "<group>"; };
 		CDB693CC244AC07C0019DCBA /* DraftListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftListRequest.swift; sourceTree = "<group>"; };
+		CDD4DC2924A8067E00A1E4A3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CDF73196242094AE00596F24 /* buttonup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buttonup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF73199242094AE00596F24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDF7319B242094AE00596F24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				CDB5CFC1243C490600B6CBFA /* Archives */,
 				CDB5CFC2243C490E00B6CBFA /* Compose */,
 				CDB5CFC3243C491B00B6CBFA /* Drafts */,
+				CDD4DC2824A8066E00A1E4A3 /* Settings */,
 				CDB5CFC4243C492200B6CBFA /* Subscribers */,
 			);
 			path = Features;
@@ -197,6 +200,14 @@
 				CD547314247C88DD0081F3A7 /* EmailListRequest.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		CDD4DC2824A8066E00A1E4A3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CDD4DC2924A8067E00A1E4A3 /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		CDF7318D242094AE00596F24 = {
@@ -394,6 +405,7 @@
 				CDA7285F24233E7200337824 /* RootTabBarController.swift in Sources */,
 				CDA3BA9E2425D7D200BDAD2B /* Tag.swift in Sources */,
 				CDB5CFD2244023F400B6CBFA /* ColorLibrary.swift in Sources */,
+				CDD4DC2A24A8067E00A1E4A3 /* SettingsViewController.swift in Sources */,
 				CD547315247C88DD0081F3A7 /* EmailListRequest.swift in Sources */,
 				CDB5CFDB2440282C00B6CBFA /* SubscriberListRequest.swift in Sources */,
 				CD547317247C8B060081F3A7 /* ArchivesCell.swift in Sources */,
