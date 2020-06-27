@@ -60,7 +60,7 @@ UITableViewDelegate {
         tableView.delegate = self
         
         navigationController?.navigationBar.barStyle = .default
-        navigationController?.navigationBar.barTintColor = .background
+        navigationController?.navigationBar.barTintColor = .systemBackground
     }
 
     override func viewDidAppear(_ animated: Bool) {

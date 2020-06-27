@@ -23,8 +23,8 @@ final class RootTabBarController: UITabBarController {
             UINavigationController(rootViewController: archivesViewController),
             UINavigationController(rootViewController: settingsViewController)
         ], animated: false)
-        tabBar.tintColor = .selectedTextFill
-        tabBar.barTintColor = .background
+        tabBar.tintColor = .systemBlue
+        tabBar.barTintColor = .systemBackground
     }
 
     // MARK: View factories
@@ -35,7 +35,7 @@ final class RootTabBarController: UITabBarController {
             title: NSLocalizedString("Archive", comment: "Title of the archive tab"),
             image: UIImage(systemName: "archivebox"),
             selectedImage: UIImage(systemName: "archivebox.fill")?
-                .withTintColor(.unselectedTextFill ?? UIColor())
+                .withTintColor(.systemFill)
         )
         return archivesViewController
     }
@@ -46,7 +46,7 @@ final class RootTabBarController: UITabBarController {
             title: NSLocalizedString("Compose", comment: "Title of the compose tab"),
             image: UIImage(systemName: "pencil"),
             selectedImage: UIImage(systemName: "pencil.fill")?
-                .withTintColor(.unselectedTextFill ?? UIColor())
+                .withTintColor(.systemFill)
         )
         return composeViewController
     }
@@ -57,7 +57,7 @@ final class RootTabBarController: UITabBarController {
             title: NSLocalizedString("Drafts", comment: "Title of the drafts tab"),
             image: UIImage(systemName: "envelope.circle"),
             selectedImage: UIImage(systemName: "envelope.circle.fill")?
-                .withTintColor(.unselectedTextFill ?? UIColor())
+                .withTintColor(.systemFill)
         )
         return draftsViewController
     }
@@ -68,7 +68,7 @@ final class RootTabBarController: UITabBarController {
             title: NSLocalizedString("Subscribers", comment: "Tite of the subscribers tab"),
             image: UIImage(systemName: "person.3"),
             selectedImage: UIImage(systemName: "person.3.fill")?
-                .withTintColor(.unselectedTextFill ?? UIColor())
+                .withTintColor(.systemFill)
         )
         return subscribersViewController
     }
@@ -79,7 +79,7 @@ final class RootTabBarController: UITabBarController {
             title: NSLocalizedString("Settings", comment: "Title of the settings tab"),
             image: UIImage(systemName: "gear"),
             selectedImage: UIImage(systemName: "gear")?
-                .withTintColor(.unselectedTextFill ?? UIColor()))
+                .withTintColor(.systemFill))
         return settingsViewController
     }
 }

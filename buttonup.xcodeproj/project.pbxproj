@@ -11,7 +11,6 @@
 		CD547313247C886B0081F3A7 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD547312247C886B0081F3A7 /* Email.swift */; };
 		CD547315247C88DD0081F3A7 /* EmailListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD547314247C88DD0081F3A7 /* EmailListRequest.swift */; };
 		CD547317247C8B060081F3A7 /* ArchivesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD547316247C8B060081F3A7 /* ArchivesCell.swift */; };
-		CDA3BA992425D24100BDAD2B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA3BA982425D24100BDAD2B /* Colors.xcassets */; };
 		CDA3BA9C2425D74500BDAD2B /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA3BA9B2425D74500BDAD2B /* Subscriber.swift */; };
 		CDA3BA9E2425D7D200BDAD2B /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA3BA9D2425D7D200BDAD2B /* Tag.swift */; };
 		CDA7285F24233E7200337824 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA7285E24233E7200337824 /* RootTabBarController.swift */; };
@@ -20,7 +19,6 @@
 		CDB5CFCA243C49C800B6CBFA /* DraftsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFC9243C49C800B6CBFA /* DraftsModel.swift */; };
 		CDB5CFCC243C49DA00B6CBFA /* SubscribersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFCB243C49DA00B6CBFA /* SubscribersModel.swift */; };
 		CDB5CFCE243D8FAC00B6CBFA /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFCD243D8FAC00B6CBFA /* APIClient.swift */; };
-		CDB5CFD2244023F400B6CBFA /* ColorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFD1244023F400B6CBFA /* ColorLibrary.swift */; };
 		CDB5CFD9244027BD00B6CBFA /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFD8244027BD00B6CBFA /* APIRequest.swift */; };
 		CDB5CFDB2440282C00B6CBFA /* SubscriberListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFDA2440282C00B6CBFA /* SubscriberListRequest.swift */; };
 		CDB5CFE3244577D900B6CBFA /* SubscribersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFE2244577D900B6CBFA /* SubscribersCell.swift */; };
@@ -61,7 +59,6 @@
 		CD547312247C886B0081F3A7 /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		CD547314247C88DD0081F3A7 /* EmailListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailListRequest.swift; sourceTree = "<group>"; };
 		CD547316247C8B060081F3A7 /* ArchivesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivesCell.swift; sourceTree = "<group>"; };
-		CDA3BA982425D24100BDAD2B /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		CDA3BA9B2425D74500BDAD2B /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
 		CDA3BA9D2425D7D200BDAD2B /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		CDA7285E24233E7200337824 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
@@ -70,7 +67,6 @@
 		CDB5CFC9243C49C800B6CBFA /* DraftsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftsModel.swift; sourceTree = "<group>"; };
 		CDB5CFCB243C49DA00B6CBFA /* SubscribersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribersModel.swift; sourceTree = "<group>"; };
 		CDB5CFCD243D8FAC00B6CBFA /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		CDB5CFD1244023F400B6CBFA /* ColorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLibrary.swift; sourceTree = "<group>"; };
 		CDB5CFD8244027BD00B6CBFA /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		CDB5CFDA2440282C00B6CBFA /* SubscriberListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriberListRequest.swift; sourceTree = "<group>"; };
 		CDB5CFE2244577D900B6CBFA /* SubscribersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribersCell.swift; sourceTree = "<group>"; };
@@ -147,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				CDB5CFCD243D8FAC00B6CBFA /* APIClient.swift */,
-				CDB5CFD1244023F400B6CBFA /* ColorLibrary.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -234,7 +229,6 @@
 			isa = PBXGroup;
 			children = (
 				CDF731A5242094B000596F24 /* Assets.xcassets */,
-				CDA3BA982425D24100BDAD2B /* Colors.xcassets */,
 				CDB5CFBD243AFD0100B6CBFA /* Features */,
 				CDA3BA9A2425D73C00BDAD2B /* Data Models */,
 				CDB5CFD32440274800B6CBFA /* Requests */,
@@ -370,7 +364,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA3BA992425D24100BDAD2B /* Colors.xcassets in Resources */,
 				CDF731A9242094B000596F24 /* LaunchScreen.storyboard in Resources */,
 				CDF731A6242094B000596F24 /* Assets.xcassets in Resources */,
 			);
@@ -404,7 +397,6 @@
 				CD547313247C886B0081F3A7 /* Email.swift in Sources */,
 				CDA7285F24233E7200337824 /* RootTabBarController.swift in Sources */,
 				CDA3BA9E2425D7D200BDAD2B /* Tag.swift in Sources */,
-				CDB5CFD2244023F400B6CBFA /* ColorLibrary.swift in Sources */,
 				CDD4DC2A24A8067E00A1E4A3 /* SettingsViewController.swift in Sources */,
 				CD547315247C88DD0081F3A7 /* EmailListRequest.swift in Sources */,
 				CDB5CFDB2440282C00B6CBFA /* SubscriberListRequest.swift in Sources */,

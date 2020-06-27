@@ -24,6 +24,6 @@ final class ComposeViewController: UIViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.barStyle = .default
-        navigationController?.navigationBar.barTintColor = .background
+        navigationController?.navigationBar.barTintColor = .systemBackground
     }
 }

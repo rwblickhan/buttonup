@@ -21,6 +21,12 @@ final class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.barStyle = .default
-        navigationController?.navigationBar.barTintColor = .background
+        navigationController?.navigationBar.barTintColor = .systemBackground
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        view.backgroundColor = .systemBackground
     }
 }
