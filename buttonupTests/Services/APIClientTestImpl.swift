@@ -11,8 +11,7 @@ import Combine
 import Foundation
 
 struct APIClientTestImpl: APIClient {
-    
-    func send<T>(_ request: T, onCompletion: @escaping (Subscribers.Completion<Error>) -> Void, onValue: @escaping (T.Response) -> Void) -> AnyCancellable? where T : APIRequest {
-        // TODO
+    func send<T>(_: T, onCompletion _: @escaping (Subscribers.Completion<Error>) -> Void, onValue _: @escaping (T.Response) -> Void) -> AnyCancellable? where T: APIRequest {
+        // TODO:
     }
 }

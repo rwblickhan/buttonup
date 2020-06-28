@@ -22,7 +22,6 @@ struct APIClientImpl: APIClient {
 
     private struct Constants {
         static let baseURL = URL(string: "https://api.buttondown.email")!
-        static let apiKey = ""
     }
 
     fileprivate init() {}
@@ -46,31 +45,33 @@ struct APIClientImpl: APIClient {
             return nil
         }
 
+        guard let apiKey = UserDefaults.standard.string(forKey: "api_key") else { return nil }
+
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.method.rawValue
         urlRequest.httpBody = request.body
         // Be a very naughty boy and overwrite Authorization header
-        urlRequest.setValue("Token \(Constants.apiKey)", forHTTPHeaderField: "Authorization")
-        
+        urlRequest.setValue("Token \(apiKey)", forHTTPHeaderField: "Authorization")
+
         let fractionalSecondsDateFormatter = ISO8601DateFormatter()
         fractionalSecondsDateFormatter.formatOptions = [
             .withFullDate,
             .withFullTime,
             .withDashSeparatorInDate,
             .withColonSeparatorInTime,
-            .withFractionalSeconds
+            .withFractionalSeconds,
         ]
-        
+
         let nonFractionalSecondsDateFormatter = ISO8601DateFormatter()
         nonFractionalSecondsDateFormatter.formatOptions = [
             .withFullDate,
             .withFullTime,
             .withDashSeparatorInDate,
-            .withColonSeparatorInTime
+            .withColonSeparatorInTime,
         ]
-        
+
         let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .custom({ decoder in
+        decoder.dateDecodingStrategy = .custom { decoder in
             let container = try decoder.singleValueContainer()
             let dateString = try container.decode(String.self)
             if let date = fractionalSecondsDateFormatter.date(from: dateString) {
@@ -80,9 +81,10 @@ struct APIClientImpl: APIClient {
             } else {
                 throw DecodingError.dataCorruptedError(
                     in: container,
-                    debugDescription: "Date string \(dateString) has unexpected format")
+                    debugDescription: "Date string \(dateString) has unexpected format"
+                )
             }
-        })
+        }
 
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
             .tryMap { (data, response) -> Data in

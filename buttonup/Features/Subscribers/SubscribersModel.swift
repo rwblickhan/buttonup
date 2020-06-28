@@ -15,7 +15,7 @@ protocol SubscribersModelDelegate: AnyObject {
 
 final class SubscribersModel {
     private weak var delegate: SubscribersModelDelegate?
-    
+
     // MARK: Services
 
     private let apiClient: APIClient
@@ -23,10 +23,10 @@ final class SubscribersModel {
     // MARK: Requests
 
     private var subscriberListRequest: AnyCancellable?
-    
+
     // MARK: View model
-    
-    private var viewModel: SubscribersViewModel {
+
+    private var viewModel = SubscribersViewModel() {
         didSet {
             delegate?.configure(with: viewModel)
         }
@@ -35,7 +35,6 @@ final class SubscribersModel {
     init(apiClient: APIClient = APIClientImpl.global, delegate: SubscribersModelDelegate) {
         self.apiClient = apiClient
         self.delegate = delegate
-        self.viewModel = SubscribersViewModel()
     }
 
     deinit {
@@ -54,7 +53,7 @@ final class SubscribersModel {
         subscriberListRequest = nil
         switch completion {
         case .finished: break
-        case .failure(let error): print(error)
+        case let .failure(error): print(error)
         }
         viewModel.refreshing = false
     }

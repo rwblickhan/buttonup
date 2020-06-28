@@ -19,18 +19,18 @@ final class ArchivesModel {
     // MARK: Services
 
     private let apiClient: APIClient
-    
+
     // MARK: Requests
 
     private var emailListRequest: AnyCancellable?
-    
+
     // MARK: Data models
-    
+
     private var emails = [Email]()
-    
+
     // MARK: View model
-    
-    private var viewModel: ArchivesViewModel {
+
+    private var viewModel = ArchivesViewModel() {
         didSet {
             delegate?.configure(with: viewModel)
         }
@@ -39,13 +39,12 @@ final class ArchivesModel {
     init(apiClient: APIClient, delegate: ArchivesModelDelegate) {
         self.apiClient = apiClient
         self.delegate = delegate
-        self.viewModel = ArchivesViewModel()
     }
-    
+
     deinit {
         emailListRequest?.cancel()
     }
-    
+
     func request() {
         guard let cancellable = apiClient.send(EmailListRequest(), onCompletion: onCompletion, onValue: onValue) else {
             assert(false, "Error while preparing request")
@@ -58,7 +57,7 @@ final class ArchivesModel {
         emailListRequest = nil
         switch completion {
         case .finished: break
-        case .failure(let error): print(error)
+        case let .failure(error): print(error)
         }
         viewModel.refreshing = false
     }

@@ -14,7 +14,7 @@ struct Draft: Codable, Hashable {
     let body: String
     let creationDate: Date
     let modificationDate: Date
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case subject

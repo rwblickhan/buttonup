@@ -21,7 +21,7 @@ struct Email: Codable, Hashable {
     let subject: String
     let body: String
     let emailType: EmailType
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case includedTags = "included_tags"
