@@ -14,6 +14,7 @@
 		CDA3BA9C2425D74500BDAD2B /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA3BA9B2425D74500BDAD2B /* Subscriber.swift */; };
 		CDA3BA9E2425D7D200BDAD2B /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA3BA9D2425D7D200BDAD2B /* Tag.swift */; };
 		CDA7285F24233E7200337824 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA7285E24233E7200337824 /* RootTabBarController.swift */; };
+		CDB222D924A81BBC0095E29B /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB222D824A81BBC0095E29B /* SettingsModel.swift */; };
 		CDB5CFC6243C499900B6CBFA /* ArchivesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFC5243C499900B6CBFA /* ArchivesModel.swift */; };
 		CDB5CFC8243C49B800B6CBFA /* ComposeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFC7243C49B800B6CBFA /* ComposeModel.swift */; };
 		CDB5CFCA243C49C800B6CBFA /* DraftsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5CFC9243C49C800B6CBFA /* DraftsModel.swift */; };
@@ -62,6 +63,7 @@
 		CDA3BA9B2425D74500BDAD2B /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
 		CDA3BA9D2425D7D200BDAD2B /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		CDA7285E24233E7200337824 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
+		CDB222D824A81BBC0095E29B /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		CDB5CFC5243C499900B6CBFA /* ArchivesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivesModel.swift; sourceTree = "<group>"; };
 		CDB5CFC7243C49B800B6CBFA /* ComposeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeModel.swift; sourceTree = "<group>"; };
 		CDB5CFC9243C49C800B6CBFA /* DraftsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftsModel.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				CDD4DC2924A8067E00A1E4A3 /* SettingsViewController.swift */,
+				CDB222D824A81BBC0095E29B /* SettingsModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				CDF7319A242094AE00596F24 /* AppDelegate.swift in Sources */,
 				CD547313247C886B0081F3A7 /* Email.swift in Sources */,
 				CDA7285F24233E7200337824 /* RootTabBarController.swift in Sources */,
+				CDB222D924A81BBC0095E29B /* SettingsModel.swift in Sources */,
 				CDA3BA9E2425D7D200BDAD2B /* Tag.swift in Sources */,
 				CDD4DC2A24A8067E00A1E4A3 /* SettingsViewController.swift in Sources */,
 				CD547315247C88DD0081F3A7 /* EmailListRequest.swift in Sources */,

@@ -30,7 +30,7 @@ final class DraftsModel {
     
     // MARK: View model
     
-    private var viewModel: DraftsViewModel {
+    private var viewModel = DraftsViewModel() {
         didSet {
             delegate?.configure(with: viewModel)
         }
@@ -39,7 +39,6 @@ final class DraftsModel {
     init(apiClient: APIClient, delegate: DraftsModelDelegate) {
         self.apiClient = apiClient
         self.delegate = delegate
-        self.viewModel = DraftsViewModel()
     }
     
     deinit {

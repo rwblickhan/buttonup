@@ -22,7 +22,6 @@ struct APIClientImpl: APIClient {
 
     private struct Constants {
         static let baseURL = URL(string: "https://api.buttondown.email")!
-        static let apiKey = ""
     }
 
     fileprivate init() {}
@@ -45,12 +44,14 @@ struct APIClientImpl: APIClient {
             assert(false, "URL should always be able to be constructed")
             return nil
         }
+        
+        guard let apiKey = UserDefaults.standard.string(forKey: "api_key") else { return nil }
 
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.method.rawValue
         urlRequest.httpBody = request.body
         // Be a very naughty boy and overwrite Authorization header
-        urlRequest.setValue("Token \(Constants.apiKey)", forHTTPHeaderField: "Authorization")
+        urlRequest.setValue("Token \(apiKey)", forHTTPHeaderField: "Authorization")
         
         let fractionalSecondsDateFormatter = ISO8601DateFormatter()
         fractionalSecondsDateFormatter.formatOptions = [

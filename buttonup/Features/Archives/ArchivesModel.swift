@@ -30,7 +30,7 @@ final class ArchivesModel {
     
     // MARK: View model
     
-    private var viewModel: ArchivesViewModel {
+    private var viewModel = ArchivesViewModel() {
         didSet {
             delegate?.configure(with: viewModel)
         }
@@ -39,7 +39,6 @@ final class ArchivesModel {
     init(apiClient: APIClient, delegate: ArchivesModelDelegate) {
         self.apiClient = apiClient
         self.delegate = delegate
-        self.viewModel = ArchivesViewModel()
     }
     
     deinit {

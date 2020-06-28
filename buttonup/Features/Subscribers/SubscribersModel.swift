@@ -26,7 +26,7 @@ final class SubscribersModel {
     
     // MARK: View model
     
-    private var viewModel: SubscribersViewModel {
+    private var viewModel = SubscribersViewModel() {
         didSet {
             delegate?.configure(with: viewModel)
         }
@@ -35,7 +35,6 @@ final class SubscribersModel {
     init(apiClient: APIClient = APIClientImpl.global, delegate: SubscribersModelDelegate) {
         self.apiClient = apiClient
         self.delegate = delegate
-        self.viewModel = SubscribersViewModel()
     }
 
     deinit {
