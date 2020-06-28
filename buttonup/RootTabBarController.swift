@@ -21,7 +21,7 @@ final class RootTabBarController: UITabBarController {
             UINavigationController(rootViewController: draftsViewController),
             UINavigationController(rootViewController: subscribersViewController),
             UINavigationController(rootViewController: archivesViewController),
-            UINavigationController(rootViewController: settingsViewController)
+            UINavigationController(rootViewController: settingsViewController),
         ], animated: false)
         tabBar.tintColor = .systemBlue
         tabBar.barTintColor = .systemBackground
@@ -72,14 +72,15 @@ final class RootTabBarController: UITabBarController {
         )
         return subscribersViewController
     }
-    
+
     private func makeSettingsViewController() -> SettingsViewController {
         let settingsViewController = SettingsViewController()
         settingsViewController.tabBarItem = UITabBarItem(
             title: NSLocalizedString("Settings", comment: "Title of the settings tab"),
             image: UIImage(systemName: "gear"),
             selectedImage: UIImage(systemName: "gear")?
-                .withTintColor(.systemFill))
+                .withTintColor(.systemFill)
+        )
         return settingsViewController
     }
 }

@@ -19,17 +19,17 @@ final class DraftsModel {
     // MARK: Services
 
     private let apiClient: APIClient
-    
+
     // MARK: Requests
 
     private var draftListRequest: AnyCancellable?
-    
+
     // MARK: Data models
-    
+
     private var drafts = [Draft]()
-    
+
     // MARK: View model
-    
+
     private var viewModel = DraftsViewModel() {
         didSet {
             delegate?.configure(with: viewModel)
@@ -40,11 +40,11 @@ final class DraftsModel {
         self.apiClient = apiClient
         self.delegate = delegate
     }
-    
+
     deinit {
         draftListRequest?.cancel()
     }
-    
+
     func request() {
         guard let cancellable = apiClient.send(DraftListRequest(), onCompletion: onCompletion, onValue: onValue) else {
             assert(false, "Error while preparing request")
@@ -57,7 +57,7 @@ final class DraftsModel {
         draftListRequest = nil
         switch completion {
         case .finished: break
-        case .failure(let error): print(error)
+        case let .failure(error): print(error)
         }
         viewModel.refreshing = false
     }

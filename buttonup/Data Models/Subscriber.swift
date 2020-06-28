@@ -29,7 +29,7 @@ struct Subscriber: Codable, Hashable {
     let utmSource: String?
 
     let tags: [Tag]
-    
+
     enum CodingKeys: String, CodingKey {
         case creationDate = "creation_date"
         case email
@@ -43,7 +43,7 @@ struct Subscriber: Codable, Hashable {
         case utmSource = "utm_source"
         case tags
     }
-    
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         creationDate = try values.decode(Date.self, forKey: .creationDate)
