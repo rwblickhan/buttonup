@@ -17,6 +17,7 @@ final class ArchivesViewController: UIViewController,
     ArchivesModelDelegate,
     UITableViewDelegate {
     private var model: ArchivesModel!
+    private var viewModel = ArchivesViewModel()
 
     // MARK: Subviews
 
@@ -42,6 +43,7 @@ final class ArchivesViewController: UIViewController,
         model = ArchivesModel(apiClient: APIClientImpl.global, delegate: self)
     }
 
+    @available(*, unavailable)
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) is not implemented")
     }
@@ -68,14 +70,25 @@ final class ArchivesViewController: UIViewController,
     // MARK: ArchivesModelDelegate
 
     func configure(with viewModel: ArchivesViewModel) {
+        self.viewModel = viewModel
+
         if !viewModel.refreshing {
             tableView.refreshControl?.endRefreshing()
         }
 
         var snapshot = NSDiffableDataSourceSnapshot<Int, Email>()
         snapshot.appendSections([0])
-        snapshot.appendItems(viewModel.emails.reversed())
+        snapshot.appendItems(viewModel.emails)
         datasource.apply(snapshot)
+    }
+
+    // MARK: UITableViewDelegate
+
+    func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.row < viewModel.emails.count else { assert(false); return }
+        let email = viewModel.emails[indexPath.row]
+        let emailViewController = EmailViewController(email: email)
+        navigationController?.pushViewController(emailViewController, animated: true)
     }
 
     // MARK: Targets

@@ -64,6 +64,6 @@ final class ArchivesModel {
 
     private func onValue(_ response: EmailListResponse) {
         assert(response.results.count == response.count)
-        viewModel.emails = response.results
+        viewModel.emails = response.results.reversed()
     }
 }
