@@ -270,6 +270,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDF731C3242094B000596F24 /* Build configuration list for PBXNativeTarget "buttonup" */;
 			buildPhases = (
+				CDEB548C24BAC4DE00CDAD32 /* Swiftlint */,
 				CDF73192242094AE00596F24 /* Sources */,
 				CDF73193242094AE00596F24 /* Frameworks */,
 				CDF73194242094AE00596F24 /* Resources */,
@@ -387,6 +388,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CDEB548C24BAC4DE00CDAD32 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CDF73192242094AE00596F24 /* Sources */ = {
