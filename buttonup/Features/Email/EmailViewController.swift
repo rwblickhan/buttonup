@@ -31,6 +31,7 @@ class EmailViewController: UIViewController {
 
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.textAlignment = .left
+        titleLabel.numberOfLines = 0
 
         // MARK: View Hierarchy
 
