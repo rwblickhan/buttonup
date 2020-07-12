@@ -74,7 +74,7 @@ final class ArchivesViewController: UIViewController,
 
         var snapshot = NSDiffableDataSourceSnapshot<Int, Email>()
         snapshot.appendSections([0])
-        snapshot.appendItems(viewModel.emails)
+        snapshot.appendItems(viewModel.emails.reversed())
         datasource.apply(snapshot)
     }
 
